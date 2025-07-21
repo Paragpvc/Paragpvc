@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARAG PVC INDUSTRIES PVT LTD - Solar Energy Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1e3c72;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .solar-icon {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: #1e3c72;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+        }
+        
+        .product-specs {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: left;
+        }
+        
+        .product-specs h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-specs ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .product-specs li {
+            padding: 0.2rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-item {
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #1e3c72;
+            font-size: 1.5rem;
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .partners h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .partner-logo {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #FFD700;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .modal-content {
+                margin: 5% auto;
+                width: 95%;
+                max-height: 90vh;
+            }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 95vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        
+        .close {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+            line-height: 1.8;
+        }
+        
+        .modal-body h3 {
+            color: #1e3c72;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .modal-body h3:first-child {
+            margin-top: 0;
+        }
+        
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .modal-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-body li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">PARAG PVC INDUSTRIES</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>Powering Tomorrow's Energy Today</h1>
+            <p>Leading provider of innovative solar energy solutions for a sustainable future. Excellence in every component, reliability in every installation.</p>
+            <a href="#products" class="cta-button">Explore Our Solutions</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Renewable Energy Revolution</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Solar energy represents the future of sustainable power generation, harnessing the infinite potential of our sun to create clean, renewable electricity. As the most abundant energy source available to humanity, solar power offers an environmentally friendly alternative to traditional fossil fuels.</p>
+                    
+                    <p>At PARAG PVC INDUSTRIES PVT LTD, we specialize in delivering cutting-edge solar technology solutions that maximize energy efficiency while minimizing environmental impact. Our comprehensive range of products ensures optimal performance across residential, commercial, and industrial applications.</p>
+                    
+                    <p>With decades of combined expertise in renewable energy systems, we are committed to advancing solar technology adoption and making clean energy accessible to everyone. Join us in building a sustainable energy future that benefits both our planet and future generations.</p>
+                </div>
+                <div class="about-image">
+                    <div class="solar-icon">☀️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Product Portfolio</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">🔋</div>
+                    <h3>Solar Panels</h3>
+                    <p>High-efficiency photovoltaic modules engineered for maximum power generation and long-term reliability.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Power Range: 300W - 550W</li>
+                            <li>Efficiency: Up to 22.5%</li>
+                            <li>Warranty: 25 Years Performance</li>
+                            <li>Technology: Monocrystalline/Polycrystalline</li>
+                            <li>Temperature Coefficient: -0.35%/°C</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3>Solar Inverters</h3>
+                    <p>Advanced power conversion systems with smart monitoring and grid-tie capabilities.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Power Range: 1KW - 80KW</li>
+                            <li>Efficiency: Up to 98.5%</li>
+                            <li>Input Voltage: 150V - 1000V DC</li>
+                            <li>Protection: IP65 Rating</li>
+                            <li>Features: WiFi Monitoring, MPPT</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🏗️</div>
+                    <h3>Solar Mounting Structures</h3>
+                    <p>Robust aluminum and steel mounting systems designed for various installation types.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Material: Anodized Aluminum/Galvanized Steel</li>
+                            <li>Wind Load: Up to 150 mph</li>
+                            <li>Snow Load: Up to 50 psf</li>
+                            <li>Tilt Angle: 10° - 60° Adjustable</li>
+                            <li>Warranty: 20 Years Structural</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">📦</div>
+                    <h3>DC Distribution Box (DCDB)</h3>
+                    <p>Comprehensive DC power management with surge protection and circuit isolation.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Configurations: 2In-2Out to 16In-1Out</li>
+                            <li>Voltage Rating: Up to 1500V DC</li>
+                            <li>Current Rating: Up to 63A per string</li>
+                            <li>Protection: IP65 Enclosure</li>
+                            <li>Components: DC SPD, Fuses, MCB</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🔌</div>
+                    <h3>AC Distribution Box (ACDB)</h3>
+                    <p>AC power distribution panels with comprehensive protection and monitoring features.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Power Range: 1KW - 100KW</li>
+                            <li>Voltage: 230V/415V AC</li>
+                            <li>Protection: MCCB, AC SPD, Earth Leakage</li>
+                            <li>Enclosure: IP54/IP65 Rating</li>
+                            <li>Features: Energy Metering, Indicators</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🔗</div>
+                    <h3>Solar DC Cables</h3>
+                    <p>Weather-resistant DC cables designed for outdoor solar installations.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Conductor: Tinned Copper</li>
+                            <li>Insulation: XLPE Cross-linked</li>
+                            <li>Voltage Rating: 1500V DC</li>
+                            <li>Temperature Range: -40°C to +90°C</li>
+                            <li>Standards: TUV, UL Certified</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">📊</div>
+                    <h3>Solar Energy Meters</h3>
+                    <p>Bidirectional energy meters for accurate solar generation and consumption monitoring.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Type: Single/Three Phase</li>
+                            <li>Accuracy Class: 1.0/2.0</li>
+                            <li>Display: LCD with Backlight</li>
+                            <li>Communication: RS485, WiFi Optional</li>
+                            <li>Features: Net Metering Compatible</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🧽</div>
+                    <h3>Solar Cleaning Equipment</h3>
+                    <p>Professional-grade cleaning tools for maintaining optimal panel performance.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Brush Type: Soft Bristle, Non-abrasive</li>
+                            <li>Handle: Telescopic, Extendable</li>
+                            <li>Length: 2m - 8m Adjustable</li>
+                            <li>Water Feed: Integrated System</li>
+                            <li>Material: Lightweight Aluminum</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🌍</div>
+                    <h3>Earthing Solutions</h3>
+                    <p>Comprehensive grounding systems for electrical safety and lightning protection.</p>
+                    <div class="product-specs">
+                        <h4>Specifications:</h4>
+                        <ul>
+                            <li>Type: Copper Bonded/Pure Copper</li>
+                            <li>Rod Diameter: 14mm - 20mm</li>
+                            <li>Length: 1.5m - 3m</li>
+                            <li>Resistance: <5 Ohms</li>
+                            <li>Standards: IS 3043 Compliant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Professional Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🔍</div>
+                    <h3>Technical Consultation</h3>
+                    <p>Expert guidance for optimal solar system design and component selection tailored to your specific requirements.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📐</div>
+                    <h3>System Design & Engineering</h3>
+                    <p>Professional engineering services for efficient solar installations with maximum energy yield optimization.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🔧</div>
+                    <h3>Installation & Commissioning</h3>
+                    <p>Complete turnkey installation services with certified technicians ensuring quality and safety standards.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Comprehensive maintenance programs and technical support to ensure long-term system performance.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📈</div>
+                    <h3>Performance Monitoring</h3>
+                    <p>Advanced monitoring solutions with real-time data analytics for system optimization and troubleshooting.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎓</div>
+                    <h3>Training & Education</h3>
+                    <p>Technical training programs for installers and end-users to maximize solar technology benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2>Our Technology Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">SolarTech Solutions</div>
+                <div class="partner-logo">GreenPower Systems</div>
+                <div class="partner-logo">EcoEnergy Corp</div>
+                <div class="partner-logo">SunRise Technologies</div>
+                <div class="partner-logo">CleanEnergy Partners</div>
+                <div class="partner-logo">PowerGen Industries</div>
+                <div class="partner-logo">RenewTech Global</div>
+                <div class="partner-logo">SolarMax Components</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PARAG PVC INDUSTRIES PVT LTD</h3>
+                    <p>Your trusted partner for comprehensive solar energy solutions. Building a sustainable future through innovative renewable technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>📧 paragpvc@gmail.com</p>
+                    <p>📞 +91-98908-69070</p>
+                    <p>📍 Flat/Door/Block No. 32/1/1<br>
+                    PARAG PVC INDUSTRIES PVT LTD<br>
+                    Village PHARANDWADI, Block 32/1/1<br>
+                    PHALTAN SATARA ROAD<br>
+                    PHALTAN, SATARA - 415523<br>
+                    MAHARASHTRA, INDIA</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#products">Products</a></p>
+                    <p><a href="#services">Services</a></p>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                    <p><a href="#terms" onclick="showTerms()">Terms & Conditions</a></p>
+                    <p><a href="#privacy" onclick="showPrivacy()">Privacy Policy</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 9:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2025 PARAG PVC INDUSTRIES PVT LTD. All rights reserved. | Powering Sustainable Energy Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+                <span class="close" onclick="closeModal('termsModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last updated:</strong> January 2025</p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using the services of PARAG PVC INDUSTRIES PVT LTD, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                
+                <h3>2. Company Information</h3>
+                <p>PARAG PVC INDUSTRIES PVT LTD is a solar energy solutions provider located at:</p>
+                <p>Flat/Door/Block No. 32/1/1, Village PHARANDWADI, Block 32/1/1, PHALTAN SATARA ROAD, PHALTAN, SATARA - 415523, MAHARASHTRA, INDIA</p>
+                
+                <h3>3. Products and Services</h3>
+                <p>We provide solar energy products and services including but not limited to:</p>
+                <ul>
+                    <li>Solar panels and photovoltaic systems</li>
+                    <li>Solar inverters and power conversion equipment</li>
+                    <li>Solar mounting structures and installation hardware</li>
+                    <li>DC/AC distribution boxes and electrical components</li>
+                    <li>Installation, maintenance, and consultation services</li>
+                </ul>
+                
+                <h3>4. Product Warranties</h3>
+                <p>All products come with manufacturer warranties as specified in individual product documentation. PARAG PVC INDUSTRIES PVT LTD will honor all valid warranty claims according to manufacturer terms.</p>
+                
+                <h3>5. Installation Services</h3>
+                <p>Professional installation services are provided by certified technicians. Installation warranties are separate from product warranties and are detailed in service agreements.</p>
+                
+                <h3>6. Pricing and Payment</h3>
+                <p>All prices are subject to change without notice. Payment terms will be specified in individual quotations and purchase agreements. Final pricing may vary based on site conditions and specific requirements.</p>
+                
+                <h3>7. Limitation of Liability</h3>
+                <p>PARAG PVC INDUSTRIES PVT LTD shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.</p>
+                
+                <h3>8. Technical Specifications</h3>
+                <p>All technical specifications are provided for informational purposes and may vary based on actual site conditions. Final system design and specifications will be confirmed during professional consultation.</p>
+                
+                <h3>9. Safety and Compliance</h3>
+                <p>All installations must comply with local electrical codes and regulations. Customers are responsible for obtaining necessary permits and approvals.</p>
+                
+                <h3>10. Modifications</h3>
+                <p>PARAG PVC INDUSTRIES PVT LTD reserves the right to modify these terms at any time. Updated terms will be posted on our website.</p>
+                
+                <h3>11. Contact Information</h3>
+                <p>For questions regarding these terms, please contact us at:</p>
+                <p>Email: paragpvc@gmail.com<br>
+                Phone: +91-98908-69070</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last updated:</strong> January 2025</p>
+                
+                <h3>1. Information We Collect</h3>
+                <p>PARAG PVC INDUSTRIES PVT LTD collects information to provide better services to our customers:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, address, phone number, email address</li>
+                    <li><strong>Property Information:</strong> Site location, roof specifications, energy consumption data</li>
+                    <li><strong>Technical Information:</strong> System performance data, monitoring information</li>
+                    <li><strong>Communication Records:</strong> Service requests, support interactions</li>
+                </ul>
+                
+                <h3>2. How We Use Information</h3>
+                <p>We use the collected information for:</p>
+                <ul>
+                    <li>Designing and installing solar energy systems</li>
+                    <li>Providing customer support and maintenance services</li>
+                    <li>System monitoring and performance optimization</li>
+                    <li>Communication regarding services and updates</li>
+                    <li>Compliance with regulatory requirements</li>
+                </ul>
+                
+                <h3>3. Information Sharing</h3>
+                <p>We do not sell, trade, or rent personal information to third parties. We may share information with:</p>
+                <ul>
+                    <li>Authorized service technicians for installation and maintenance</li>
+                    <li>Equipment manufacturers for warranty and support purposes</li>
+                    <li>Regulatory authorities when required by law</li>
+                    <li>Financial institutions for financing arrangements (with consent)</li>
+                </ul>
+                
+                <h3>4. Data Security</h3>
+                <p>We implement appropriate security measures to protect personal information against unauthorized access, alteration, disclosure, or destruction. This includes:</p>
+                <ul>
+                    <li>Secure data storage and transmission protocols</li>
+                    <li>Access controls and authentication measures</li>
+                    <li>Regular security assessments and updates</li>
+                    <li>Employee training on data protection</li>
+                </ul>
+                
+                <h3>5. Data Retention</h3>
+                <p>We retain personal information for as long as necessary to provide services, comply with legal obligations, and resolve disputes. System performance data may be retained for the operational life of the solar installation.</p>
+                
+                <h3>6. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access and review your personal information</li>
+                    <li>Request corrections to inaccurate information</li>
+                    <li>Request deletion of personal information (subject to legal requirements)</li>
+                    <li>Opt-out of marketing communications</li>
+                    <li>File complaints regarding data protection</li>
+                </ul>
+                
+                <h3>7. Monitoring Systems</h3>
+                <p>Solar monitoring systems may collect energy production and consumption data. This information is used solely for system optimization and customer service purposes.</p>
+                
+                <h3>8. Third-Party Services</h3>
+                <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites.</p>
+                
+                <h3>9. Children's Privacy</h3>
+                <p>Our services are not directed to children under 18. We do not knowingly collect personal information from children.</p>
+                
+                <h3>10. Updates to Privacy Policy</h3>
+                <p>We may update this privacy policy to reflect changes in our practices or legal requirements. Updated policies will be posted on our website.</p>
+                
+                <h3>11. Contact Us</h3>
+                <p>For privacy-related questions or requests, please contact us at:</p>
+                <p>Email: paragpvc@gmail.com<br>
+                Phone: +91-98908-69070<br>
+                Address: Flat/Door/Block No. 32/1/1, Village PHARANDWADI, Block 32/1/1, PHALTAN SATARA ROAD, PHALTAN, SATARA - 415523, MAHARASHTRA, INDIA</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 60, 114, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+
+        // Product card animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Modal functions
+        function showTerms() {
+            document.getElementById('termsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showPrivacy() {
+            document.getElementById('privacyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const termsModal = document.getElementById('termsModal');
+            const privacyModal = document.getElementById('privacyModal');
+            if (event.target == termsModal) {
+                closeModal('termsModal');
+            }
+            if (event.target == privacyModal) {
+                closeModal('privacyModal');
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal('termsModal');
+                closeModal('privacyModal');
+            }
+        });
+    </script>
+</body>
+</html>
